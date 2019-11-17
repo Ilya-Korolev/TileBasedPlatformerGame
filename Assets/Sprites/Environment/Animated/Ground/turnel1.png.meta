@@ -1,7 +1,124 @@
 fileFormatVersion: 2
 guid: 43001aef40d73294bb231ffe8a87468f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3603510747713703323
+    second: turnel1_0_0
+  - first:
+      213: -3974816974314784429
+    second: turnel1_1_0
+  - first:
+      213: -1789059769193120777
+    second: turnel1_2_0
+  - first:
+      213: 4358188534642576936
+    second: turnel1_3
+  - first:
+      213: 5156709993695110009
+    second: turnel1_4
+  - first:
+      213: -5061863161813987102
+    second: turnel1_5
+  - first:
+      213: 7120726794004484782
+    second: turnel1_6
+  - first:
+      213: -8369721904018736088
+    second: turnel1_7
+  - first:
+      213: 946450744472592243
+    second: turnel1_8
+  - first:
+      213: -3626028176143056172
+    second: turnel1_9
+  - first:
+      213: -5643108751736006605
+    second: turnel1_10
+  - first:
+      213: -3447785449244141358
+    second: turnel1_11
+  - first:
+      213: -5691392134080122501
+    second: turnel1_3_0
+  - first:
+      213: -6653976304098320323
+    second: turnel1_13
+  - first:
+      213: 18075345397093087
+    second: turnel1_14
+  - first:
+      213: 5131705770663383651
+    second: turnel1_15
+  - first:
+      213: -7400536672434377627
+    second: turnel1_16
+  - first:
+      213: 3781703594384604351
+    second: turnel1_17
+  - first:
+      213: -7515930012719660680
+    second: turnel1_18
+  - first:
+      213: -5709759649133583454
+    second: turnel1_19
+  - first:
+      213: -7537650356113028139
+    second: turnel1_20
+  - first:
+      213: 1553238815833813404
+    second: turnel1_21
+  - first:
+      213: -4362513186044091840
+    second: turnel1_22
+  - first:
+      213: -8280884763921833539
+    second: turnel1_23
+  - first:
+      213: -5672901062692005303
+    second: turnel1_24
+  - first:
+      213: 755303781429767085
+    second: turnel1_25
+  - first:
+      213: -1613328272245269555
+    second: turnel1_26
+  - first:
+      213: 5272404218685566872
+    second: turnel1_27
+  - first:
+      213: -537060746654161059
+    second: turnel1_28
+  - first:
+      213: -8683460777021288274
+    second: turnel1_29
+  - first:
+      213: 5305553159557115263
+    second: turnel1_30
+  - first:
+      213: -5911043405556821670
+    second: turnel1_31
+  - first:
+      213: 4876147192250091207
+    second: turnel1_32
+  - first:
+      213: 4137340123665525849
+    second: turnel1_33
+  - first:
+      213: -7779703162341927182
+    second: turnel1_34
+  - first:
+      213: 1041521059603316892
+    second: turnel1_35
+  - first:
+      213: 425341947165967492
+    second: turnel1_0
+  - first:
+      213: 1970749196209328171
+    second: turnel1_1
+  - first:
+      213: 4645101779284315381
+    second: turnel1_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +157,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +187,117 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: turnel1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad39d06419547042b5ebd93ee0ddc68
+      internalID: 425341947165967492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turnel1_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6fc64ff7ee4bb46a737c2371eee919
+      internalID: 1970749196209328171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turnel1_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a50738f06b65e40a88921ae840484e
+      internalID: 4645101779284315381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turnel1_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7045f996c39271c4e8a5d2873d7d5868
+      internalID: 4358188534642576936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
