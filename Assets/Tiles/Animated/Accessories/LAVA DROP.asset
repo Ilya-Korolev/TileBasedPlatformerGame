@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: LAVA DROP
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -856438945058637406, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -9093808074770049016, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: 1019815056425651969, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -21646507282955530, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: 5457003576389795020, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: 1590639524169340646, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -7258374818402961530, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -1779950243056086666, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -1716116182697734532, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: 2124423833069414707, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -4529557804884310982, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  - {fileID: -6282585958956912961, guid: aa783e7bc1a227b46a17ad19284d1f04, type: 3}
+  m_MinSpeed: 12
+  m_MaxSpeed: 12
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0
