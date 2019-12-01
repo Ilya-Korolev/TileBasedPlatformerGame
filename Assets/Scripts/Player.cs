@@ -16,16 +16,30 @@ public class Player : MonoBehaviour
     void Update()
     {
         Run();
+        Flip();
     }
 
     private void Run()
     {
-        var horizontalThrow = Input.GetAxis("Horizontal");
-        var playerVelocity = _rigidbody2D.velocity;
-        var deltaAcceleration = Time.deltaTime * horizontalThrow != 0f ? _runAcceleration : _groundDeceleration;
+        float horizontalThrow = Input.GetAxis("Horizontal");
+        Vector2 playerVelocity = _rigidbody2D.velocity;
+        float deltaAcceleration = Time.deltaTime * horizontalThrow != 0f ? _runAcceleration : _groundDeceleration;
 
         playerVelocity.x = Mathf.MoveTowards(playerVelocity.x, horizontalThrow * _runSpeed, deltaAcceleration);
 
         _rigidbody2D.velocity = playerVelocity;
+    }
+
+    private void Flip()
+    {
+        bool playerHasHorizontalSpeed = Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
+
+        if (playerHasHorizontalSpeed)
+        {
+            float playerHorizontalDirection = Mathf.Sign(_rigidbody2D.velocity.x);
+            Vector2 playerScale = new Vector2(playerHorizontalDirection, transform.localScale.y);
+
+            transform.localScale = playerScale;
+        }
     }
 }
