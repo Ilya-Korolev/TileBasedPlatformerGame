@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _runSpeed: 10
-  _runAcceleration: 2
-  _groundDeceleration: 10
+  _runAcceleration: 100
+  _groundDeceleration: 100
 --- !u!1 &1587126796018010080
 GameObject:
   m_ObjectHideFlags: 0
