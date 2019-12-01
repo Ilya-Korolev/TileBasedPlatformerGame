@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1587126794768477108}
   - component: {fileID: 8951318861515465900}
   - component: {fileID: 4420390569556611015}
+  - component: {fileID: 1401000922}
   m_Layer: 0
   m_Name: Black Knight
   m_TagString: Untagged
@@ -90,6 +91,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.41199028, y: -0.331208}
   m_Size: {x: 0.4676869, y: 1.7270417}
   m_Direction: 0
+--- !u!114 &1401000922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587126794768477111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f07cf72b9e37e7498c12f3e8a7729aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runSpeed: 10
+  _runAcceleration: 2
+  _groundDeceleration: 10
 --- !u!1 &1587126796018010080
 GameObject:
   m_ObjectHideFlags: 0
