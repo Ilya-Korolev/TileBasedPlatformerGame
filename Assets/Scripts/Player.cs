@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
     {
         bool isOnGroundLayer = _collider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
-        if (isOnGroundLayer && !_isTurning && !_isClimbing && Input.GetButtonDown("Action"))
+        if (isOnGroundLayer && !_isRunning && !_isTurning && !_isClimbing && Input.GetButtonDown("Action"))
         {
             List<Collider2D> climbingColliders = OverlapClimbingColliders();
 
@@ -109,6 +109,11 @@ public class Player : MonoBehaviour
 
             _isTurning = true;
             _animator.SetBool("IsTurning", true);
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+
+        if (_isTurning)
+        {
             _rigidbody2D.velocity = Vector2.zero;
         }
 
