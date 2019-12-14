@@ -12380,6 +12380,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2132680351 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1587126794768477108, guid: d3ad8454cb1735d47b3890ec773b0191,
+    type: 3}
+  m_PrefabInstance: {fileID: 1587126795726814042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1587126795726814042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12456,6 +12462,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 478892823057044378, guid: e99308852d9077046a9e0361db13761d,
+        type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 28377897}
+    - target: {fileID: 649412636396034326, guid: e99308852d9077046a9e0361db13761d,
+        type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 28377897}
+    - target: {fileID: 2173772598173405345, guid: e99308852d9077046a9e0361db13761d,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 467912725}
+    - target: {fileID: 3290655571422944192, guid: e99308852d9077046a9e0361db13761d,
+        type: 3}
+      propertyPath: m_ChildCameras.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3290655571422944192, guid: e99308852d9077046a9e0361db13761d,
+        type: 3}
+      propertyPath: m_AnimatedTarget
+      value: 
+      objectReference: {fileID: 2132680351}
+    - target: {fileID: 5226190661122243612, guid: e99308852d9077046a9e0361db13761d,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 467912725}
     - target: {fileID: 6695773214236506761, guid: e99308852d9077046a9e0361db13761d,
         type: 3}
       propertyPath: m_Name
