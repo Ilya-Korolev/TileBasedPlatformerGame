@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Black Knight Getting Down
+  m_Name: Black Knight Falling
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,22 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 5380523854759902008, guid: b46befda263161a4692b84df6e2dfbca,
-        type: 3}
-    - time: 0.083333336
-      value: {fileID: 1560722441499081317, guid: b46befda263161a4692b84df6e2dfbca,
-        type: 3}
-    - time: 0.16666667
-      value: {fileID: 3701124140092912674, guid: b46befda263161a4692b84df6e2dfbca,
-        type: 3}
-    - time: 0.25
-      value: {fileID: 5551280361430486710, guid: b46befda263161a4692b84df6e2dfbca,
-        type: 3}
-    - time: 0.33333334
-      value: {fileID: -3141272363876476169, guid: b46befda263161a4692b84df6e2dfbca,
-        type: 3}
-    - time: 0.41666666
-      value: {fileID: 5774550303383125907, guid: b46befda263161a4692b84df6e2dfbca,
+      value: {fileID: -6653398763189924869, guid: b46befda263161a4692b84df6e2dfbca,
         type: 3}
     attribute: m_Sprite
     path: Body
@@ -56,18 +41,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 5380523854759902008, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
-    - {fileID: 1560722441499081317, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
-    - {fileID: 3701124140092912674, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
-    - {fileID: 5551280361430486710, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
-    - {fileID: -3141272363876476169, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
-    - {fileID: 5774550303383125907, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
+    - {fileID: -6653398763189924869, guid: b46befda263161a4692b84df6e2dfbca, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
