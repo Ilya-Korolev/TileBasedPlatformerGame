@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8951318861515465900}
   - component: {fileID: 1401000922}
   - component: {fileID: 6942386265906773961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Black Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587126796018010081}
   - component: {fileID: 1587126796018010086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
