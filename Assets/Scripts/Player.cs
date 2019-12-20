@@ -9,39 +9,47 @@ public class Player : MonoBehaviour
 
     [Header("Jump settings")]
     [SerializeField] private float _jumpSpeed = 20f;
-    [SerializeField] private float _landingPredictTime = 0.1f;
 
     [Header("Climb settings")]
     [SerializeField] private float _climbSpeed = 5f;
-    [SerializeField] private float _climbOffset = 0.114f;
 
-    // State
+    // States
     private CharacterState _currentState;
     private float _animationSpeed = 1f;
+    private float _distanceToGround = 0f;
+    private float _velocityY = 0f;
+    private bool _isOnGround;
 
     // Cached component references
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
-    private Collider2D _collider2D;
+    private BoxCollider2D _feetCollider2D;
+    private BoxCollider2D _bodyCollider2D;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _collider2D = GetComponent<Collider2D>();
+
+        _bodyCollider2D = transform.Find("Colliders/Вody Collider").GetComponent<BoxCollider2D>();
+        _feetCollider2D = transform.Find("Colliders/Feet Collider").GetComponent<BoxCollider2D>();
 
         _currentState = CharacterState.Idling;
     }
 
     private void Update()
     {
+        _distanceToGround = GetDistanceToGround();
+        _velocityY = _rigidbody2D.velocity.y;
+        _isOnGround = _feetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
+
         ChangeStateOnTurningEnds();
         ChangeStateOnLandingEnds();
 
         Run();
 
         Jump();
-        Fall();
+        InAir();
         Land();
 
         TurnAwayBeforeClimbing();
@@ -113,36 +121,23 @@ public class Player : MonoBehaviour
             return;
 
         _rigidbody2D.velocity += new Vector2(0f, _jumpSpeed);
-        _currentState = CharacterState.Jumping;
     }
 
-    private void Fall()
+    private void InAir()
     {
-        if (_currentState != CharacterState.Running && _currentState != CharacterState.Jumping)
+        if (_currentState != CharacterState.Running && _currentState != CharacterState.Idling)
             return;
 
-        bool isOnGroundLayer = _collider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
-        bool playerGoingDown = _rigidbody2D.velocity.y < -Mathf.Epsilon;
-
-        if (!isOnGroundLayer && playerGoingDown)
-            _currentState = CharacterState.Falling;
+        if (_distanceToGround > Mathf.Epsilon && !_isOnGround)
+            _currentState = CharacterState.InAir;
     }
 
     private void Land()
     {
-        if (_currentState != CharacterState.Falling)
+        if (_currentState != CharacterState.InAir)
             return;
 
-        float gravitationalAcceleration = Physics2D.gravity.y;
-        float langingPredictDistanse = Mathf.Abs(_rigidbody2D.velocity.y * _landingPredictTime + gravitationalAcceleration * Mathf.Pow(_landingPredictTime, 2f) / 2f);
-
-        Vector2 bottomPointLeft = _collider2D.bounds.min;
-        Vector2 bottomPointRight = new Vector2(_collider2D.bounds.max.x, _collider2D.bounds.min.y);
-
-        RaycastHit2D groundHitLeft = Physics2D.Raycast(bottomPointLeft, Vector2.down, langingPredictDistanse, LayerMask.GetMask("Ground"));
-        RaycastHit2D groundHitRight = Physics2D.Raycast(bottomPointRight, Vector2.down, langingPredictDistanse, LayerMask.GetMask("Ground"));
-
-        if (groundHitLeft || groundHitRight)
+        if (_isOnGround)
             _currentState = CharacterState.Landing;
     }
 
@@ -154,9 +149,8 @@ public class Player : MonoBehaviour
         float controlVerticalThrow = Input.GetAxis("Vertical");
 
         bool isUpPressed = controlVerticalThrow > Mathf.Epsilon;
-        bool isOnGroundLayer = _collider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
-        if (!isUpPressed || !isOnGroundLayer)
+        if (!isUpPressed || !_isOnGround)
             return;
 
         List<Collider2D> climbColliders = OverlapClimbColliders();
@@ -166,10 +160,7 @@ public class Player : MonoBehaviour
 
         Collider2D climbCollider = climbColliders[0];
 
-        float playerDirection = Mathf.Sign(transform.localScale.x);
-        float climbPositionX = climbCollider.bounds.center.x + playerDirection * _climbOffset;
-
-        transform.position = new Vector2(climbPositionX, transform.position.y);
+        transform.position = new Vector2(climbCollider.bounds.center.x, transform.position.y);
         _rigidbody2D.velocity = Vector2.zero;
 
         _currentState = CharacterState.Turning;
@@ -194,11 +185,9 @@ public class Player : MonoBehaviour
             return;
 
         float controlVerticalThrow = Input.GetAxis("Vertical");
-
         bool isDownPressed = controlVerticalThrow < -Mathf.Epsilon;
-        bool isOnGroundLayer = _collider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
-        if (!isOnGroundLayer || !isDownPressed)
+        if (!_isOnGround || !isDownPressed)
             return;
 
         _rigidbody2D.velocity = Vector2.zero;
@@ -237,12 +226,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    private float GetDistanceToGround()
+    {
+        int groundLayerMask = LayerMask.GetMask("Ground");
+
+        Vector2 bottomPointLeft = _feetCollider2D.bounds.min;
+        Vector2 bottomPointRight = new Vector2(_feetCollider2D.bounds.max.x, _feetCollider2D.bounds.min.y);
+
+        RaycastHit2D groundHitLeft = Physics2D.Raycast(bottomPointLeft, Vector2.down, 10f, groundLayerMask);
+        RaycastHit2D groundHitRight = Physics2D.Raycast(bottomPointRight, Vector2.down, 10f, groundLayerMask);
+
+        return Mathf.Min(groundHitLeft.distance, groundHitRight.distance);
+    }
+
     private void UpdateAnimation()
     {
         _animator.SetBool("IsIdling", false);
         _animator.SetBool("IsRunning", false);
-        _animator.SetBool("IsJumping", false);
-        _animator.SetBool("IsFalling", false);
+        _animator.SetBool("IsInAir", false);
         _animator.SetBool("IsLanding", false);
         _animator.SetBool("IsClimbing", false);
         _animator.SetBool("IsTurning", false);
@@ -250,5 +251,7 @@ public class Player : MonoBehaviour
         _animator.SetBool($"Is{_currentState}", true);
 
         _animator.SetFloat("AnimationSpeed", _animationSpeed);
+        _animator.SetFloat("DistanceToGround", _distanceToGround);
+        _animator.SetFloat("VelocityY", _velocityY);
     }
 }

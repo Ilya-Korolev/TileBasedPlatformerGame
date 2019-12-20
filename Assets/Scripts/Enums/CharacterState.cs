@@ -2,8 +2,7 @@
 {
     Idling,
     Running,
-    Jumping,
-    Falling,
+    InAir,
     Landing,
     Turning,
     Climbing
