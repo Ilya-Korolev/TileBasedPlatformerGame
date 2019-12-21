@@ -5,5 +5,6 @@
     InAir,
     Landing,
     Turning,
-    Climbing
+    Climbing,
+    Dying
 }

@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (_currentState == CharacterState.Dying)
+            return;
+
         _distanceToGround = GetDistanceToGround();
         _velocityY = _rigidbody2D.velocity.y;
         _isOnGround = _feetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
         TurnTowardAfterClimbing();
 
         Flip();
+
+        Die();
 
         UpdateAnimation();
     }
@@ -226,6 +231,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        bool isTouchingEnemy = _bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy"));
+
+        if (!isTouchingEnemy)
+            return;
+
+        _currentState = CharacterState.Dying;
+        _feetCollider2D.enabled = false;
+        _bodyCollider2D.enabled = false;
+        _rigidbody2D.gravityScale = 0f;
+    }
+
     private float GetDistanceToGround()
     {
         int groundLayerMask = LayerMask.GetMask("Ground");
@@ -247,6 +265,7 @@ public class Player : MonoBehaviour
         _animator.SetBool("IsLanding", false);
         _animator.SetBool("IsClimbing", false);
         _animator.SetBool("IsTurning", false);
+        _animator.SetBool("IsDying", false);
 
         _animator.SetBool($"Is{_currentState}", true);
 
