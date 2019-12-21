@@ -157,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 10868921
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 2044427573496935793, guid: b46befda263161a4692b84df6e2dfbca,
     type: 3}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3267479497380930342}
   - component: {fileID: 7936524421483285155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Feet Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,8 +195,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6372765268837336885}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 26.442383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3499929446485867709}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4453033858357323498}
   - component: {fileID: 2983870040807890529}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "\u0412ody Collider"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3499929446485867709}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
