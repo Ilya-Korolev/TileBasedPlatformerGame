@@ -233,15 +233,19 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        bool isTouchingEnemy = _bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy"));
+        bool isTouchingEnemy = _bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"));
 
         if (!isTouchingEnemy)
             return;
 
         _currentState = CharacterState.Dying;
-        _feetCollider2D.enabled = false;
-        _bodyCollider2D.enabled = false;
-        _rigidbody2D.gravityScale = 0f;
+
+        int deathLayer = LayerMask.NameToLayer("Death");
+
+        _bodyCollider2D.gameObject.layer = deathLayer;
+        _feetCollider2D.gameObject.layer = deathLayer;
+
+        _rigidbody2D.velocity = Vector2.zero;
     }
 
     private float GetDistanceToGround()
