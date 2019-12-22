@@ -119,13 +119,21 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (_currentState != CharacterState.Running && _currentState != CharacterState.Idling)
+        if (_currentState != CharacterState.Running && _currentState != CharacterState.Idling && _currentState != CharacterState.Climbing)
             return;
 
         if (!Input.GetButtonDown("Jump"))
             return;
 
         _rigidbody2D.velocity += new Vector2(0f, _jumpSpeed);
+
+        if (_currentState == CharacterState.Climbing)
+        {
+            _animationSpeed = 1f;
+            _rigidbody2D.gravityScale = 1f;
+
+            _currentState = CharacterState.InAir;
+        }
     }
 
     private void InAir()

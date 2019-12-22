@@ -20151,6 +20151,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 2983870040807890529, guid: d3ad8454cb1735d47b3890ec773b0191,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3386494
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983870040807890529, guid: d3ad8454cb1735d47b3890ec773b0191,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8036971
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936524421483285155, guid: d3ad8454cb1735d47b3890ec773b0191,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3ad8454cb1735d47b3890ec773b0191, type: 3}
 --- !u!1001 &6695773214568027992
