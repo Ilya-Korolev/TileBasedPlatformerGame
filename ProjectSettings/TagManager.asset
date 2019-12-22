@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - Hazards
   - Death
-  - 
+  - Itneractables
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Hazards
     uniqueID: 1092948901
+    locked: 0
+  - name: Itneractables
+    uniqueID: 2028960317
     locked: 0
   - name: Enemy
     uniqueID: 1081377279
