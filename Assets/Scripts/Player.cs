@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -12,6 +13,9 @@ public class Player : MonoBehaviour
 
     [Header("Climb settings")]
     [SerializeField] private float _climbSpeed = 5f;
+
+    [Header("Death settings")]
+    [SerializeField] private float _deathDelay = 1f;
 
     // States
     private CharacterState _currentState;
@@ -254,6 +258,17 @@ public class Player : MonoBehaviour
         _feetCollider2D.gameObject.layer = deathLayer;
 
         _rigidbody2D.velocity = Vector2.zero;
+
+        StartCoroutine(TakeLiveWithDelay(_deathDelay));
+    }
+
+    private IEnumerator TakeLiveWithDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+
+        GameSession gameSession = FindObjectOfType<GameSession>();
+
+        gameSession.ProcessPlayerDamage();
     }
 
     private float GetDistanceToGround()
