@@ -20166,6 +20166,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 207331785}
     m_Modifications:
+    - target: {fileID: 2942240479026699811, guid: e6e6017dd9b5dca4fa5ec15551832432,
+        type: 3}
+      propertyPath: _coinPickUpSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 4500608d44029314cb4a956ef3c9d3bc, type: 3}
+    - target: {fileID: 2942240479026699811, guid: e6e6017dd9b5dca4fa5ec15551832432,
+        type: 3}
+      propertyPath: _sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4500608d44029314cb4a956ef3c9d3bc, type: 3}
+    - target: {fileID: 2942240479026699811, guid: e6e6017dd9b5dca4fa5ec15551832432,
+        type: 3}
+      propertyPath: _sfxVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3690296440619567801, guid: e6e6017dd9b5dca4fa5ec15551832432,
         type: 3}
       propertyPath: m_Name
