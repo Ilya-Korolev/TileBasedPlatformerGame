@@ -1,11 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] int playerLives = 3;
+    [SerializeField] private int _playerLives = 3;
+    [SerializeField] private int _playerScore = 0;
 
+    [Header("UI")]
+    [SerializeField] public LivesBar _livesBar = default;
+    [SerializeField] public Text _scoreText = default;
 
     private void Awake()
     {
@@ -17,23 +21,30 @@ public class GameSession : MonoBehaviour
             DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        _livesBar.SetLives(_playerLives);
+        _scoreText.text = _playerScore.ToString();
     }
 
     public void ProcessPlayerDamage()
     {
-        if (playerLives > 1)
+        if (_playerLives > 1)
             TakeLife();
         else
             ResetGameSession();
     }
 
+    public void AddToScore(int pointToAdd)
+    {
+        _playerScore += pointToAdd;
+        _scoreText.text = _playerScore.ToString();
+    }
+
     private void TakeLife()
     {
-        --playerLives;
+        --_playerLives;
+        _livesBar.RemoveLifeContainer();
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
@@ -44,6 +55,9 @@ public class GameSession : MonoBehaviour
         int menuIndex = 0;
         SceneManager.LoadScene(menuIndex);
 
+        var scenePersist = FindObjectOfType<ScenePersist>();
+
+        Destroy(scenePersist);
         Destroy(gameObject);
     }
 }

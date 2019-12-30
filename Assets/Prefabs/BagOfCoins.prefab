@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7326269824653549636}
   - component: {fileID: 2942240479026699811}
   m_Layer: 15
-  m_Name: Coin
+  m_Name: BagOfCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,3 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bbbc98259031b40af97dc13015830d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _points: 100
+  _sfxClip: {fileID: 8300000, guid: 4500608d44029314cb4a956ef3c9d3bc, type: 3}
+  _sfxVolume: 1
