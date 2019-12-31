@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: lavaflow
+  m_Name: lavaflow_2
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 6824653745543892864, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: 3117182842601397549, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
   - {fileID: -7354152216006586568, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: -3593079740811468746, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: 2393847514016367991, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
   - {fileID: -1100617074668866080, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: -4898556497106396167, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: 4183680761806297109, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
   - {fileID: -680589369199185609, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: 6888083505765698340, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
-  - {fileID: 876861651511578758, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
   - {fileID: 6447232016396225898, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -9200250127461964142, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -2204003060988993897, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -7623417515871821155, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -3311736155154529458, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: 629669949599603153, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -2523394725945360026, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -4192650492034366285, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
+  - {fileID: -7597222969789341080, guid: 966d18f4172fb7646ba2c38a3004ad81, type: 3}
   m_MinSpeed: 12
   m_MaxSpeed: 12
   m_AnimationStartTime: 0
